@@ -143,7 +143,7 @@ public partial class Sales : System.Web.UI.Page
         {
             con.Open();
             //string query1 = @"SELECT * FROM Orders WHERE OrderNo=@OrderNo";
-            
+
             string query = @"SELECT DISTINCT s.SalesID, c.CompanyName, c.TinNo, 
                                 c.Address FROM Sales s
                                 INNER JOIN Customer c on s.CustomerID=c.CustomerID
@@ -185,22 +185,61 @@ public partial class Sales : System.Web.UI.Page
     }
     protected void SaveSales(object sender, EventArgs e)
     {
-        using (SqlConnection con = new SqlConnection(Util.GetConnection()))
+        if (txtAmount.Text == "0")
         {
-            con.Open();
-            string query = @"UPDATE Sales SET Amount=@Amount, Date=@Date, DateModified=@DateModified WHERE SalesID=@SalesID";
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            using (SqlConnection con = new SqlConnection(Util.GetConnection()))
             {
-                //cmd.Parameters.AddWithValue("@Month", ddlMonth.SelectedValue);
-                cmd.Parameters.AddWithValue("@Amount", txtAmount.Text);
-                cmd.Parameters.AddWithValue("@Date", date.Text);
-                cmd.Parameters.AddWithValue("@DateModified", DateTime.Now);
-                cmd.Parameters.AddWithValue("@SalesID", salesID.Text);
-                //cmd.Parameters.AddWithValue("@Image", "Sample.jpg");
+                con.Open();
+                string query = @"UPDATE Sales SET Amount=@Amount, Date=@Date, DateModified=@DateModified WHERE SalesID=@SalesID";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    //cmd.Parameters.AddWithValue("@Month", ddlMonth.SelectedValue);
+                    cmd.Parameters.AddWithValue("@Amount", txtAmount.Text);
+                    cmd.Parameters.AddWithValue("@Date", date.Text);
+                    cmd.Parameters.AddWithValue("@DateModified", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@SalesID", salesID.Text);
+                    //cmd.Parameters.AddWithValue("@Image", "Sample.jpg");
 
-                cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
+                    Response.Redirect("Sales.aspx");
+                }
+            }
+        }
+        if (txtAmount.Text != "0")
+        {
+            using (SqlConnection con = new SqlConnection(Util.GetConnection()))
+            {
+                con.Open();
+                string query = @"UPDATE Sales SET Amount=@Amount, Date=@Date, DateModified=@DateModified WHERE SalesID=@SalesID";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    //cmd.Parameters.AddWithValue("@Month", ddlMonth.SelectedValue);
+                    cmd.Parameters.AddWithValue("@Amount", txtAmount.Text);
+                    cmd.Parameters.AddWithValue("@Date", date.Text);
+                    cmd.Parameters.AddWithValue("@DateModified", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@SalesID", salesID.Text);
+                    //cmd.Parameters.AddWithValue("@Image", "Sample.jpg");
 
-                Response.Redirect("Sales.aspx");
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+
+            using (SqlConnection con = new SqlConnection(Util.GetConnection()))
+            {
+                con.Open();
+                string query = @"INSERT INTO SalesHistory VALUES (@SalesID, @Date, @Amount, @DateAdded)";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@SalesID", salesID.Text);
+                    cmd.Parameters.AddWithValue("@Date", date.Text);
+                    cmd.Parameters.AddWithValue("@Amount", txtAmount.Text);
+                    cmd.Parameters.AddWithValue("@DateAdded", DateTime.Now);
+
+                    cmd.ExecuteNonQuery();
+
+                    Response.Redirect("Sales.aspx");
+                }
             }
         }
     }

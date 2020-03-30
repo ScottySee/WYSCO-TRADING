@@ -1764,78 +1764,24 @@
     <Content Include="asset\vendor\prismjs\themes\prism-tomorrow.css" />
     <Content Include="asset\vendor\prismjs\themes\prism-twilight.css" />
     <Content Include="asset\vendor\prismjs\themes\prism.css" />
-    <Content Include="Bootstrap\assets\css\blk-design-system.css" />
-    <Content Include="Bootstrap\assets\css\blk-design-system.min.css" />
-    <Content Include="Bootstrap\assets\css\nucleo-icons.css" />
-    <Content Include="Bootstrap\assets\css\rating.css" />
-    <Content Include="Bootstrap\assets\css\stars.png" />
-    <Content Include="Bootstrap\assets\demo\demo.css" />
-    <Content Include="Bootstrap\assets\demo\demo.js" />
-    <Content Include="Bootstrap\assets\img\apple-icon.png" />
-    <Content Include="Bootstrap\assets\img\asc.gif" />
-    <Content Include="Bootstrap\assets\img\bg.gif" />
-    <Content Include="Bootstrap\assets\img\bitcoin.png" />
-    <Content Include="Bootstrap\assets\img\blob.png" />
-    <Content Include="Bootstrap\assets\img\cercuri.png" />
-    <Content Include="Bootstrap\assets\img\chester-wade.jpg" />
-    <Content Include="Bootstrap\assets\img\denys.jpg" />
-    <Content Include="Bootstrap\assets\img\desc.gif" />
-    <Content Include="Bootstrap\assets\img\dots.png" />
-    <Content Include="Bootstrap\assets\img\etherum.png" />
-    <Content Include="Bootstrap\assets\img\fabien-bazanegue.jpg" />
-    <Content Include="Bootstrap\assets\img\favicon.png" />
-    <Content Include="Bootstrap\assets\img\github.svg" />
-    <Content Include="Bootstrap\assets\img\google.svg" />
-    <Content Include="Bootstrap\assets\img\james.jpg" />
-    <Content Include="Bootstrap\assets\img\julie.jpeg" />
-    <Content Include="Bootstrap\assets\img\landing-page.png" />
-    <Content Include="Bootstrap\assets\img\logo.png" />
-    <Content Include="Bootstrap\assets\img\lora.jpg" />
-    <Content Include="Bootstrap\assets\img\mark-finn.jpg" />
-    <Content Include="Bootstrap\assets\img\mike.jpg" />
-    <Content Include="Bootstrap\assets\img\nucleo-logo.svg" />
-    <Content Include="Bootstrap\assets\img\path1.png" />
-    <Content Include="Bootstrap\assets\img\path2.png" />
-    <Content Include="Bootstrap\assets\img\path3.png" />
-    <Content Include="Bootstrap\assets\img\path4.png" />
-    <Content Include="Bootstrap\assets\img\path5.png" />
-    <Content Include="Bootstrap\assets\img\patrat.png" />
-    <Content Include="Bootstrap\assets\img\profile-page.png" />
-    <Content Include="Bootstrap\assets\img\ripp.png" />
-    <Content Include="Bootstrap\assets\img\ryan.jpg" />
-    <Content Include="Bootstrap\assets\img\square-purple-1.png" />
-    <Content Include="Bootstrap\assets\img\square1.png" />
-    <Content Include="Bootstrap\assets\img\square2.png" />
-    <Content Include="Bootstrap\assets\img\square3.png" />
-    <Content Include="Bootstrap\assets\img\square4.png" />
-    <Content Include="Bootstrap\assets\img\square5.png" />
-    <Content Include="Bootstrap\assets\img\square6.png" />
-    <Content Include="Bootstrap\assets\img\triunghiuri.png" />
-    <Content Include="Bootstrap\assets\img\waves.png" />
-    <Content Include="Bootstrap\assets\js\blk-design-system.js" />
-    <Content Include="Bootstrap\assets\js\blk-design-system.min.js" />
-    <Content Include="Bootstrap\assets\js\core\bootstrap.min.js" />
-    <Content Include="Bootstrap\assets\js\core\jquery.min.js" />
-    <Content Include="Bootstrap\assets\js\core\popper.min.js" />
-    <Content Include="Bootstrap\assets\js\plugins\bootstrap-datepicker.js" />
-    <Content Include="Bootstrap\assets\js\plugins\bootstrap-datetimepicker.js" />
-    <Content Include="Bootstrap\assets\js\plugins\bootstrap-switch.js" />
-    <Content Include="Bootstrap\assets\js\plugins\chartjs.min.js" />
-    <Content Include="Bootstrap\assets\js\plugins\jquery.sharrre.min.js" />
-    <Content Include="Bootstrap\assets\js\plugins\moment.min.js" />
-    <Content Include="Bootstrap\assets\js\plugins\nouislider.min.js" />
-    <Content Include="Bootstrap\assets\js\plugins\perfect-scrollbar.jquery.min.js" />
-    <Content Include="Bootstrap\docs\documentation.html" />
-    <Content Include="Bootstrap\examples\landing-page.html" />
-    <Content Include="Bootstrap\examples\profile-page.html" />
-    <Content Include="Bootstrap\examples\register-page.html" />
-    <Content Include="Bootstrap\gulpfile.js" />
-    <Content Include="Bootstrap\index.html" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Customer.aspx" />
+    <Content Include="PrintPurchases.aspx" />
     <Content Include="PrintSales.aspx" />
     <Content Include="Purchases.aspx" />
     <Content Include="Reports.aspx" />
     <Content Include="Sales.aspx" />
+    <Content Include="Script\bootstrap.js" />
+    <Content Include="Script\bootstrap.min.js" />
+    <Content Include="PrintPage.Master" />
+    <None Include="Script\jquery-1.9.1.intellisense.js" />
+    <Content Include="Script\jquery-1.9.1.js" />
+    <Content Include="Script\jquery-1.9.1.min.js" />
     <Content Include="Supplier.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Script\fusioncharts.charts.js" />
@@ -1847,6 +1793,7 @@
     <Content Include="Script\fusioncharts.treemap.js" />
     <Content Include="Script\fusioncharts.widgets.js" />
     <Content Include="Script\fusioncharts.zoomscatter.js" />
+    <Content Include="TransactionHistory.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1857,6 +1804,20 @@
     </Compile>
     <Compile Include="Customer.aspx.designer.cs">
       <DependentUpon>Customer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrintPage.Master.cs">
+      <DependentUpon>PrintPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrintPage.Master.designer.cs">
+      <DependentUpon>PrintPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PrintPurchases.aspx.cs">
+      <DependentUpon>PrintPurchases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrintPurchases.aspx.designer.cs">
+      <DependentUpon>PrintPurchases.aspx</DependentUpon>
     </Compile>
     <Compile Include="PrintSales.aspx.cs">
       <DependentUpon>PrintSales.aspx</DependentUpon>
@@ -1908,175 +1869,15 @@
       <DependentUpon>Home.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransactionHistory.aspx.cs">
+      <DependentUpon>TransactionHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TransactionHistory.aspx.designer.cs">
+      <DependentUpon>TransactionHistory.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Bootstrap\.DS_Store" />
-    <Content Include="Bootstrap\assets\.DS_Store" />
-    <Content Include="Bootstrap\assets\css\blk-design-system.css.map" />
-    <Content Include="Bootstrap\assets\fonts\nucleo.eot" />
-    <Content Include="Bootstrap\assets\fonts\nucleo.ttf" />
-    <Content Include="Bootstrap\assets\fonts\nucleo.woff" />
-    <Content Include="Bootstrap\assets\fonts\nucleo.woff2" />
-    <Content Include="Bootstrap\assets\js\blk-design-system.js.map" />
-    <Content Include="Bootstrap\assets\scss\.DS_Store" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\.DS_Store" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_alert.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_background-variant.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_badge.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_border-radius.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_box-shadow.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_breakpoints.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_buttons.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_caret.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_clearfix.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_float.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_forms.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_gradients.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_grid-framework.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_grid.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_hover.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_image.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_list-group.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_lists.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_nav-divider.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_pagination.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_reset-text.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_resize.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_screen-reader.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_size.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_table-row.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_text-emphasis.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_text-hide.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_text-truncate.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_transition.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\mixins\_visibility.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\utilities\_align.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\utilities\_background.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\utilities\_borders.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\utilities\_clearfix.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\utilities\_display.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\utilities\_embed.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\utilities\_flex.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\utilities\_float.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\utilities\_position.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\utilities\_screenreaders.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\utilities\_shadows.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\utilities\_sizing.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\utilities\_spacing.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\utilities\_text.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\utilities\_visibility.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_alert.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_badge.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_breadcrumb.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_button-group.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_buttons.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_card.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_carousel.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_close.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_code.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_custom-forms.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_dropdown.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_forms.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_functions.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_grid.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_images.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_input-group.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_jumbotron.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_list-group.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_media.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_mixins.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_modal.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_nav.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_navbar.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_pagination.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_popover.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_print.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_progress.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_reboot.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_root.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_tables.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_tooltip.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_transitions.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_type.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_utilities.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\bootstrap\_variables.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\cards\_card-chart.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\cards\_card-map.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\cards\_card-plain.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\cards\_card-register.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\cards\_card-stats.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\cards\_card-task.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\cards\_card-user.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\mixins\opacity.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\mixins\_alert.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\mixins\_background-variant.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\mixins\_badges.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\mixins\_buttons.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\mixins\_dropdown.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\mixins\_forms.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\mixins\_icon.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\mixins\_inputs.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\mixins\_modals.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\mixins\_page-header.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\mixins\_popovers.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\mixins\_vendor-prefixes.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\mixins\_wizard.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\sections\_blogs.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\sections\_contactus.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\sections\_features.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\sections\_headers.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\sections\_pricing.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\sections\_projects.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\sections\_social-subscribe-lines.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\sections\_team.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\sections\_testimonials.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\utilities\_backgrounds.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\utilities\_floating.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\utilities\_helper.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\utilities\_position.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\utilities\_shadows.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\utilities\_sizing.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\utilities\_spacing.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\utilities\_text.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\utilities\_transform.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\vendor\_plugin-animate-bootstrap-notify.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\vendor\_plugin-bootstrap-switch.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\vendor\_plugin-datetimepicker.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\vendor\_plugin-nouislider.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\vendor\_plugin-perfect-scrollbar.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_alerts.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_badge.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_buttons.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_card.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_checkboxes-radio.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_dropdown.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_example-pages.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_fixed-plugin.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_footer.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_forms.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_functions.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_icons.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_images.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_info-areas.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_input-group.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_misc.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_mixins.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_modal.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_navbar.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_pagination.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_pills.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_progress.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_rtl.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_sections.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_tables.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_tabs.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_type.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_utilities.scss" />
-    <Content Include="Bootstrap\assets\scss\blk-design-system\custom\_variables.scss" />
-    <Content Include="Bootstrap\CHANGELOG.md" />
-    <Content Include="Bootstrap\package.json" />
-    <Content Include="Bootstrap\README.md" />
     <Content Include="asset\fonts\nucleo\nucleo-icons.eot" />
     <Content Include="asset\fonts\nucleo\nucleo-icons.ttf" />
     <Content Include="asset\fonts\nucleo\nucleo-icons.woff" />
@@ -2292,7 +2093,12 @@
     <Content Include="asset\vendor\nucleo\fonts\nucleo-icons.woff2" />
     <Content Include="asset\vendor\prismjs\components.json" />
     <Content Include="Home.Master" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
     <None Include="packages.config" />
+    <Content Include="Script\jquery-1.9.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -63,7 +63,8 @@ public partial class PrintSales : System.Web.UI.Page
         using (SqlConnection con = new SqlConnection(Util.GetConnection()))
         {
             string query = @"SELECT c.CompanyName, c.TinNo, c.Address, FORMAT (Date, 'MMMM yyyy') as Date, Amount FROM Sales s
-                                INNER JOIN Customer c ON s.CustomerID=c.CustomerID";
+                                INNER JOIN Customer c ON s.CustomerID=c.CustomerID
+                                WHERE Amount!='0.00'";
 
             cmd = new SqlCommand(query, con);
             //cmd.Parameters.AddWithValue("@SalesNo", ID);

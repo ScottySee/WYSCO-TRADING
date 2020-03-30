@@ -92,8 +92,8 @@
                                                     <td><%# Eval("Address") %></td>
                                                     <td><%# Eval("Status") %></td>
                                                     <td>
-                                                        <a href='Customer.aspx?EditID=<%# Eval("CustomerID") %>' class="btn btn-info btn-sm"><i class="fa fa-edit"></i>Edit</a>&nbsp;
-                                                        <a href='Customer.aspx?DeleteID=<%# Eval("CustomerID") %>' class="btn btn-danger btn-sm" onclick="return confirm('Do you want to archive this item?')"><i class="fa fa-trash"></i>Archive</a>&nbsp;
+                                                        <a href='Customer.aspx?EditID=<%# Eval("CustomerID") %>' class="btn btn-info btn-sm">Edit</a>&nbsp;
+                                                        <a href='Customer.aspx?DeleteID=<%# Eval("CustomerID") %>' class="btn btn-danger btn-sm" onclick="return confirm('Do you want to archive this item?')">Archive</a>&nbsp;
                                                     </td>
                                                 </tr>
                                             </ItemTemplate>

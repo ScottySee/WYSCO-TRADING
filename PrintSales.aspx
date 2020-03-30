@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeFile="PrintSales.aspx.cs" Inherits="PrintSales" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PrintPage.Master" AutoEventWireup="true" CodeFile="PrintSales.aspx.cs" Inherits="PrintSales" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="header" runat="Server">
     <div class="header bg-gradient-gray-dark pb-5 pt-5 pt-md-8">
@@ -25,7 +25,7 @@
                                             <h1>Sales</h1>
                                             <p>
                                                 <h2><em><%= Date %></em></h2>
-                                            </p>    
+                                            </p>
                                         </div>
                                         <table class="table-active table" style="width: 100%;">
                                             <thead>
@@ -56,11 +56,20 @@
                                                     </EmptyDataTemplate>
                                                 </asp:ListView>
                                             </tbody>
+                                            <tfoot>
+                                                <tr class="text-center">
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th class="text-right">Total</th>
+                                                    <td class="text-right">Php <%=TotalAmount.ToString("#,##0.00") %></td>
+                                                </tr>
+                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>
                             </div>
                             <input name="b_print" type="button" class="ipt btn btn-success" onclick="printdiv('printpage');" value="Print" />
+                            <a href="Sales.aspx" class="ipt btn btn-success">Back</a>
                         </div>
                     </div>
                 </ContentTemplate>

@@ -71,7 +71,7 @@
                         <div class="col-lg-2">
                             <div class="form-group">
                                 <label class="control-label text-darker">Amount</label>
-                                <asp:TextBox ID="txtAmount" runat="server" class="form-control" type="number" min="0.01" max="1000000.00" step="0.01" required />
+                                <asp:TextBox ID="txtAmount" runat="server" class="form-control" type="number" min="0.00" max="1000000.00" step="0.01" required />
                             </div>
                         </div>
                     </div>
@@ -130,9 +130,9 @@
                                                     <td><%# Eval("TinNo") %></td>
                                                     <td><%# Eval("Address") %></td>
                                                     <td>Php <%# Eval("Amount", "{0: #,##0.00}") %></td>
-                                                    <td><%# Eval("Date", "{0:MMM dd, yyyy}") %></td>
+                                                    <td><%# Eval("Date", "{0:MMMM dd, yyyy}") %></td>
                                                     <td>
-                                                        <a href='Sales.aspx?EditID=<%# Eval("SalesID") %>' class="btn btn-info btn-sm"><i class="fa fa-edit"></i>Edit</a>&nbsp;
+                                                        <a href='Sales.aspx?EditID=<%# Eval("SalesID") %>' class="btn btn-info btn-sm">Edit</a>&nbsp;
                                                 <%--<a href='products.aspx?DeleteID=<%# Eval("ProductID") %>' class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete this item?')"><i class="fa fa-trash"></i>Delete</a>&nbsp;--%>
                                             </td>
                                                 </tr>
@@ -166,7 +166,6 @@
             $('#dtSales').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
-
                 ]
             });
         });

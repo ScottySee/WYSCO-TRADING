@@ -61,13 +61,13 @@
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label class="control-label">Date:</label>
-                                <asp:TextBox TextMode="date" ID="date" runat="server" class="form-control" min="01-2020" max="12-2040" required />
+                                <asp:TextBox TextMode="date" ID="date" runat="server" class="form-control" min="01-2020" max="12-2040" />
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
                                 <label class="control-label text-darker">Amount</label>
-                                <asp:TextBox ID="txtAmount" runat="server" class="form-control" type="number" min="0.01" max="1000000.00" step="0.01" required />
+                                <asp:TextBox ID="txtAmount" runat="server" class="form-control" type="number" min="0.00" max="1000000.00" step="0.01" required />
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                     <div class="col-lg-4">
                         <div class="input-group">
                             <%--<asp:Button ID="btnAdd" runat="server" class="btn btn-lg btn-success" Text="Add Product" OnClick="AddProduct" />--%>
-                            <asp:Button ID="btnEdit" runat="server" OnClientClick="return confirm('Save changes?')" class="btn btn-lg btn-warning" Text="Update Purchases" OnClick="SaveSales" />
+                            <asp:Button ID="btnEdit" runat="server" OnClientClick="return confirm('Save changes?')" class="btn btn-lg btn-warning" Text="Update Purchases" OnClick="SavePurchase" />
                             <asp:Button ID="btnCancel" runat="server" hidden class="btn btn-lg btn-danger" Text="Cancel" OnClick="btnCancel_Click" />
                         </div>
                     </div>
@@ -95,6 +95,11 @@
                             END<asp:TextBox ID="txtEnd" runat="server" CssClass="form-control"
                                 type="date" AutoPostBack="true" OnTextChanged="SearchByDate" />
                         </div>--%>
+                        <span class="pull-right">
+                            <a href="PrintPurchases.aspx?ID=<%= Request.QueryString["ID"] %>" class="btn btn-sm btn-success btn-block">
+                                Print Purchases
+                            </a>
+                        </span>
                         <div class="text-white">
                             <center><h1>Purchases</h1></center>
                         </div>
@@ -118,9 +123,9 @@
                                                     <td><%# Eval("TinNo") %></td>
                                                     <td><%# Eval("Address") %></td>
                                                     <td>Php <%# Eval("Amount", "{0: #,##0.00}") %></td>
-                                                    <td><%# Eval("Date", "{0:MMM, yyyy}") %></td>
+                                                    <td><%# Eval("Date", "{0:MMMM dd, yyyy}") %></td>
                                                     <td>
-                                                        <a href='Purchases.aspx?EditID=<%# Eval("PurchaseID") %>' class="btn btn-info btn-sm"><i class="fa fa-edit"></i>Edit</a>&nbsp;
+                                                        <a href='Purchases.aspx?EditID=<%# Eval("PurchaseID") %>' class="btn btn-info btn-sm">Edit</a>&nbsp;
                                                 <%--<a href='products.aspx?DeleteID=<%# Eval("ProductID") %>' class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete this item?')"><i class="fa fa-trash"></i>Delete</a>&nbsp;--%>
                                             </td>
                                                 </tr>
@@ -154,7 +159,7 @@
             $('#dtPurchases').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
-
+                    
                 ]
             });
         });

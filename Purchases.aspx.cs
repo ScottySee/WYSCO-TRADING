@@ -139,8 +139,9 @@ public partial class Purchases : System.Web.UI.Page
             con.Open();
             //string query1 = @"SELECT * FROM Orders WHERE OrderNo=@OrderNo";
 
-            string query = @"SELECT DISTINCT PurchaseID, CompanyName, TinNo, 
-                                Address, Date FROM Purchases
+            string query = @"SELECT DISTINCT p.PurchaseID, s.CompanyName, s.TinNo, 
+                                s.Address, p.Date FROM Purchases p
+                                INNER JOIN Supplier s ON s.SupplierID = p.SupplierID
                                 WHERE PurchaseID=@PurchaseID";
 
             //string query2 = @"SELECT DISTINCT s.SalesID, c.CompanyName, c.TinNo, 
@@ -171,26 +172,86 @@ public partial class Purchases : System.Web.UI.Page
             }
         }
     }
-    protected void SaveSales(object sender, EventArgs e)
+    protected void SavePurchase(object sender, EventArgs e)
     {
-        using (SqlConnection con = new SqlConnection(Util.GetConnection()))
+        if (txtAmount.Text == "0")
         {
-            con.Open();
-            string query = @"UPDATE Purchases SET Amount=@Amount, Date=@Date, DateModified=@DateModified WHERE PurchaseID=@PurchaseID";
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            using (SqlConnection con = new SqlConnection(Util.GetConnection()))
             {
-                //cmd.Parameters.AddWithValue("@Month", ddlMonth.SelectedValue);
-                cmd.Parameters.AddWithValue("@Amount", txtAmount.Text);
-                cmd.Parameters.AddWithValue("@Date", date.Text);
-                cmd.Parameters.AddWithValue("@DateModified", DateTime.Now);
-                cmd.Parameters.AddWithValue("@PurchaseID", purchaseID.Text);
-                //cmd.Parameters.AddWithValue("@Image", "Sample.jpg");
+                con.Open();
+                string query = @"UPDATE Purchases SET Amount=@Amount, Date=@Date, DateModified=@DateModified WHERE PurchaseID=@PurchaseID";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    //cmd.Parameters.AddWithValue("@Month", ddlMonth.SelectedValue);
+                    cmd.Parameters.AddWithValue("@Amount", txtAmount.Text);
+                    cmd.Parameters.AddWithValue("@Date", date.Text);
+                    cmd.Parameters.AddWithValue("@DateModified", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@PurchaseID", purchaseID.Text);
+                    //cmd.Parameters.AddWithValue("@Image", "Sample.jpg");
 
-                cmd.ExecuteNonQuery();
-
-                Response.Redirect("Purchases.aspx");
+                    cmd.ExecuteNonQuery();
+                    Response.Redirect("Purchases.aspx");
+                }
             }
         }
+        if (txtAmount.Text != "0")
+        {
+            using (SqlConnection con = new SqlConnection(Util.GetConnection()))
+            {
+                con.Open();
+                string query = @"UPDATE Purchases SET Amount=@Amount, Date=@Date, DateModified=@DateModified WHERE PurchaseID=@PurchaseID";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    //cmd.Parameters.AddWithValue("@Month", ddlMonth.SelectedValue);
+                    cmd.Parameters.AddWithValue("@Amount", txtAmount.Text);
+                    cmd.Parameters.AddWithValue("@Date", date.Text);
+                    cmd.Parameters.AddWithValue("@DateModified", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@PurchaseID", purchaseID.Text);
+                    //cmd.Parameters.AddWithValue("@Image", "Sample.jpg");
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            using (SqlConnection con = new SqlConnection(Util.GetConnection()))
+            {
+                con.Open();
+                string query = @"INSERT INTO PurchasesHistory VALUES (@PurchaseID, @Date, @Amount, @DateAdded)";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@PurchaseID", purchaseID.Text);
+                    cmd.Parameters.AddWithValue("@Date", date.Text);
+                    cmd.Parameters.AddWithValue("@Amount", txtAmount.Text);
+                    cmd.Parameters.AddWithValue("@DateAdded", DateTime.Now);
+
+                    cmd.ExecuteNonQuery();
+                    Response.Redirect("Purchases.aspx");
+                }
+            }
+        }
+        //using (SqlConnection con = new SqlConnection(Util.GetConnection()))
+        //{
+        //    con.Open();
+        //    string query = @"INSERT INTO PurcahsesHistory VALUES (@CompanyName, @TinNo, @Address, @Amount, @Date, @Status, @DateAdded)";
+
+        //    using (SqlCommand cmd = new SqlCommand(query, con))
+        //    {
+        //        //cmd.Parameters.AddWithValue("@Month", ddlMonth.SelectedValue);
+        //        cmd.Parameters.AddWithValue("@CompanyName", txtcompanyname.Text);
+        //        cmd.Parameters.AddWithValue("@TinNo", txtTin.Text);
+        //        cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
+        //        cmd.Parameters.AddWithValue("@Amount", txtAmount.Text);
+        //        cmd.Parameters.AddWithValue("@Date", date.Text);
+        //        cmd.Parameters.AddWithValue("@Status", "Active");
+        //        cmd.Parameters.AddWithValue("@DateAdded", DateTime.Now);
+        //        //cmd.Parameters.AddWithValue("@SalesID", salesID.Text);
+        //        //cmd.Parameters.AddWithValue("@Image", "Sample.jpg");
+
+        //        cmd.ExecuteNonQuery();
+
+        //        Response.Redirect("Purchases.aspx");
+        //    }
+        //}
     }
 
     //void DeleteRecord(int ID)

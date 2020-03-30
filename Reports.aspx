@@ -68,7 +68,7 @@
                             <div class="col-xs-12 table">
                                 <table id="dtSales" class="table table-striped">
                                     <thead>
-                                        <tr style="text-align:center">
+                                        <tr style="text-align: center">
                                             <th>Company</th>
                                             <th>Tin #</th>
                                             <th>Address</th>
@@ -80,13 +80,13 @@
                                         <%--OnPagePropertiesChanging="lvRates_PagePropertiesChanging"--%>
                                         <asp:ListView ID="lvSales" runat="server">
                                             <ItemTemplate>
-                                                <tr class="bg-default" style="text-align:center">
+                                                <tr class="bg-default" style="text-align: center">
                                                     <td><%# Eval("CompanyName") %></td>
                                                     <td><%# Eval("TinNo") %></td>
                                                     <td><%# Eval("Address") %></td>
                                                     <td><%# Eval("Date", "{0:MMM dd, yyyy}") %></td>
                                                     <td><%# Eval("Amount", "{0: #,##0.00}") %></td>
-                                                    
+
                                                 </tr>
                                             </ItemTemplate>
                                             <EmptyDataTemplate>
@@ -117,26 +117,26 @@
                             <div class="col-xs-12 table">
                                 <table id="dtPurchases" class="table table-striped">
                                     <thead>
-                                        <tr style="text-align:center">
+                                        <tr style="text-align: center">
                                             <th>Company</th>
                                             <th>Tin #</th>
                                             <th>Address</th>
                                             <th>Date</th>
                                             <th>Amount</th>
-                                            
+
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <%--OnPagePropertiesChanging="lvRates_PagePropertiesChanging"--%>
                                         <asp:ListView ID="lvPurchases" runat="server">
                                             <ItemTemplate>
-                                                <tr class="bg-default" style="text-align:center">
+                                                <tr class="bg-default" style="text-align: center">
                                                     <td><%# Eval("CompanyName") %></td>
                                                     <td><%# Eval("TinNo") %></td>
                                                     <td><%# Eval("Address") %></td>
                                                     <td><%# Eval("Date", "{0:MMM dd, yyyy}") %></td>
                                                     <td><%# Eval("Amount") %></td>
-                                                    
+
                                                 </tr>
                                             </ItemTemplate>
                                             <EmptyDataTemplate>
@@ -166,17 +166,40 @@
             $('#dtSales').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
-                    'pdf','print'
+                    {
+                        //extend: 'pdfHtml5',
+                        //orientation: 'landscape',
+                        //pageSize: 'Letter',
+                        //title: 'WYSCO Trading - Sales Report'
+                        extend: 'print',
+                        orientation: 'landscape'
+
+                    }
                 ]
             });
         });
     </script>
+    <%--<script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'pdfHtml5',
+                        orientation: 'landscape',
+                        pageSize: 'LEGAL'
+                    }
+                ]
+            });
+        });
+    </script>--%>
+
     <script>
         $(document).ready(function () {
             $('#dtPurchases').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
-                    'pdf','print'
+                    'pdf', 'print'
                 ]
             });
         });
